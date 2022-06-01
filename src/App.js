@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react';
+import { getPokemonByName } from './utils/helper';
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      myPokemon: [
+        getPokemonByName('chansey'),
+        getPokemonByName('jigglypuff'),
+        getPokemonByName('ekans'),
+      ],
+    };
+  }
+  render() {
+    return (
+      <div className="App">
+        <header>My Pokedex</header>
+        <div className="pokedex">
+          {this.state.myPokemon.map(({ id, name, image }) => {
+            return (
+              <div key={id} className="pokemon">
+                <h3>{name}</h3>
+                <img src={image} alt={name} />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

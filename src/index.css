@@ -1,13 +1,45 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url('https://64.media.tumblr.com/46dc6aba55acce24953bbc1b09bd674c/tumblr_nuxz3ukZ7r1qk9nv0o1_500.png');
+  background-repeat: repeat;
+  display: flex;
+  justify-content: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header {
+  font-size: 2em;
+  text-align: center;
+}
+
+.App {
+  margin-top: 10vh;
+  background-color: white;
+  border-radius: 20px 20px 20px 20px;
+  padding-bottom: 25px;
+  box-shadow: 10px 10px 50px gray;
+  border: 1px solid black;
+}
+
+.pokedex {
+  display: flex;
+  width: 80vw;
+  height: 70vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-basis: 80vw;
+}
+
+.pokemon {
+  flex: 1 0 200px;
+  text-align: center;
+}
+
+.pokemon img {
+  border: 1px solid red;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px pink;
 }
