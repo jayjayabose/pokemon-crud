@@ -1,5 +1,8 @@
 import React from 'react';
 import { getPokemonByName } from './utils/helper';
+import New from './component/New';
+import Pokedex from './component/Pokedex';
+import { Link, Route, Routes } from 'react-router-dom';
 class App extends React.Component {
   constructor() {
     super();
@@ -11,20 +14,27 @@ class App extends React.Component {
       ],
     };
   }
+
+  addPokemon = (chosenPokemon) => {
+    console.log('chosenPokemon =', chosenPokemon);
+    let foundPokemon = getPokemonByName(chosenPokemon);
+    let newPokemon = [...this.state.myPokemon, foundPokemon];
+    this.setState({ myPokemon: newPokemon });
+  };
+
   render() {
+    console.log(this.state);
     return (
       <div className="App">
         <header>My Pokedex</header>
-        <div className="pokedex">
-          {this.state.myPokemon.map(({ id, name, image }) => {
-            return (
-              <div key={id} className="pokemon">
-                <h3>{name}</h3>
-                <img src={image} alt={name} />
-              </div>
-            );
-          })}
+        <div className="navbar">
+          <Link to="/">Home</Link>
+          <Link to="/new">New</Link>
         </div>
+        <Routes>
+          <Route path="/" element={<Pokedex myPokemon={this.state.myPokemon} />} />
+          <Route path="/new" element={<New addPokemon={this.addPokemon} />} />
+        </Routes>
       </div>
     );
   }
