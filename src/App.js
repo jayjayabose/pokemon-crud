@@ -2,6 +2,7 @@ import React from 'react';
 import { getPokemonByName } from './utils/helper';
 import New from './component/New';
 import Pokedex from './component/Pokedex';
+import Show from './component/Show';
 import { Link, Route, Routes } from 'react-router-dom';
 class App extends React.Component {
   constructor() {
@@ -31,9 +32,11 @@ class App extends React.Component {
           <Link to="/">Home</Link>
           <Link to="/new">New</Link>
         </div>
+
         <Routes>
           <Route path="/" element={<Pokedex myPokemon={this.state.myPokemon} />} />
           <Route path="/new" element={<New addPokemon={this.addPokemon} />} />
+          <Route path="/pokemon/:id" element={<Show myPokemon={this.state.myPokemon} />} />
         </Routes>
       </div>
     );
