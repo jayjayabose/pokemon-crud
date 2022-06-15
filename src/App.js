@@ -1,5 +1,6 @@
 import React from 'react';
 import { getPokemonByName } from './utils/helper';
+
 class App extends React.Component {
   constructor() {
     super();
