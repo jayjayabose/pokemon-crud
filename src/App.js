@@ -11,6 +11,11 @@ class App extends React.Component {
       ],
     };
   }
+
+  componentDidMount() {
+    // fetch Youtube videos
+  }
+
   render() {
     return (
       <div className="App">
