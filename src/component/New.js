@@ -19,7 +19,7 @@ class New extends React.Component {
         return (
             <div>
                 <input type="text" value={this.state.pokemonName} onChange={this.updatePoke}></input>
-                 <button onClick={() => this.props.addPokemon(this.state.pokemonName)}> This button adds Pokemon</button>>
+                <button onClick={() => this.props.addPokemon(this.state.pokemonName)}> This button adds Pokemon</button>>
             </div>
         )
     }

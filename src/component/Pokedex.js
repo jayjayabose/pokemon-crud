@@ -1,3 +1,6 @@
+import Detail from './Detail';
+import {Routes, Route, Link} from "react-router-dom";
+
 const Pokedex = (props) => {
     //console.log(`pokedex: ${props.myPokemon}`)
     return (        
@@ -6,7 +9,16 @@ const Pokedex = (props) => {
             return (
               <div key={id} className="pokemon">
                 <h3>{name}</h3>
-                <img src={image} alt={name} />
+
+                <Link to={{
+                    pathname: '/detail',
+                    state: {
+                        choosenPokemonName: 'ziggy' 
+                    }
+                }}>
+                    <img src={image} alt={name} />
+                </Link>
+                
               </div>
             );
           })}
